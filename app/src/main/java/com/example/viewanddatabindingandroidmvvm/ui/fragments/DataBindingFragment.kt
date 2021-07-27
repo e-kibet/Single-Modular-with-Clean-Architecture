@@ -1,17 +1,21 @@
 package com.example.viewanddatabindingandroidmvvm.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.viewanddatabindingandroidmvvm.R
+import androidx.fragment.app.Fragment
+import com.example.viewanddatabindingandroidmvvm.databinding.FragmentDataBindingBinding
 
 class DataBindingFragment : Fragment() {
+
+    lateinit var binding: FragmentDataBindingBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_data_binding, container, false)
+        binding =  FragmentDataBindingBinding.inflate(inflater, container, false)
+        return  binding.root
     }
 }
